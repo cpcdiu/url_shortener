@@ -7,55 +7,101 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Main Vertical LinearLayout for Centering Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
+        <!-- Title Section -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shortly"
+            android:textSize="50sp"
+            android:fontFamily="@font/rubik_moonrocks_regular"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- URL Input Section -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="50dp"
-                android:fontFamily="@font/rubik_moonrocks_regular"
-                android:text="Shortly"/>
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            android:layout_height="55dp">
-
+            <!-- TextInputLayout for URL Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Enter your url..."
-                android:layout_height="wrap_content">
+                android:hint="Input URL">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etURL"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:inputType="textUri"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Submit Button -->
             <LinearLayout
+                android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
                 android:background="@drawable/button_bg"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:layout_height="match_parent">
+                android:padding="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:text="Submit"
+                    android:textSize="16sp"
                     android:textColor="@color/white"
-                    android:layout_gravity="center"
                     android:textStyle="bold"
-                    android:text="Submit"/>
+                    android:gravity="center"/>
             </LinearLayout>
+        </LinearLayout>
+
+        <!-- Result Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Shortened URL TextView -->
+            <TextView
+                android:id="@+id/tvURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shortened URL will appear here"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <!-- Copy Button -->
+            <Button
+                android:id="@+id/btnCopy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy URL"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="8dp"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
