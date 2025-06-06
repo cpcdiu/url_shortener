@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#6C63FF</color>
+    <color name="cardBgColor">#F8F9FF</color>
+    <color name="inputBgColor">#E8EAF6</color>
+    <color name="resultCardBg">#E3F2FD</color>
+    <color name="gradientStart">#6C63FF</color>
+    <color name="gradientEnd">#48C6EF</color>
 </resources>
