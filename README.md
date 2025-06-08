@@ -15,13 +15,15 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 
 ## Screenshots
 
-> Add your screenshots here!
+| Home Screen | History Screen | Profile Screen |
+|:-----------:|:-------------:|:--------------:|
+| ![Home](screenshots/home.png) | ![History](screenshots/history.png) | ![Profile](screenshots/profile.png) |
 
 ## Getting Started
 
 ### Prerequisites
 - Android Studio (latest recommended)
-- Android SDK 24+
+- Android SDK 27+
 
 ### Build & Run
 1. Clone this repository:
