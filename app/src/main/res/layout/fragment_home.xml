@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="@drawable/bg_gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:padding="24dp">
+        android:gravity="center_horizontal"
+        android:padding="32dp">
 
-        <!-- Title Section -->
+        <!-- App Title -->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -24,83 +22,99 @@
             android:fontFamily="@font/rubik_moonrocks_regular"
             android:textStyle="bold"
             android:textColor="@color/primaryColor"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="24dp" />
 
-        <!-- URL Input Section -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Card for URL Shortener -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Input URL"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
-            app:boxBackgroundMode="filled"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusBottomEnd="16dp"
-            app:boxBackgroundColor="@color/inputBgColor"
-            android:layout_marginBottom="18dp">
+            app:cardCornerRadius="28dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/cardBgColor"
+            android:layout_marginBottom="32dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etURL"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:inputType="textUri" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        <!-- Submit Button -->
-        <LinearLayout
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="@drawable/button_bg"
-            android:padding="10dp"
-            android:layout_marginBottom="18dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Shorten URL"
-                android:textSize="18sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:gravity="center"/>
-        </LinearLayout>
+                <!-- URL Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Paste your URL here"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:boxBackgroundColor="@color/inputBgColor"
+                    android:layout_marginBottom="18dp">
 
-        <!-- Result Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/resultCardBg"
-            android:padding="16dp"
-            android:layout_marginBottom="10dp"
-            android:elevation="6dp"
-            android:layout_gravity="center_horizontal">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etURL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:inputType="textUri" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Shortened URL TextView -->
-            <TextView
-                android:id="@+id/tvURL"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Shortened URL will appear here"
-                android:textSize="16sp"
-                android:textColor="@color/primaryColor"
-                android:paddingBottom="8dp" />
+                <!-- Shorten Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Shorten URL"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    app:cornerRadius="16dp"
+                    app:iconPadding="8dp"
+                    app:iconTint="@color/white"
+                    app:backgroundTint="@color/primaryColor"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="10dp" />
 
-            <!-- Copy Button -->
-            <Button
-                android:id="@+id/btnCopy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Copy URL"
-                android:textSize="14sp"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/primaryColor"
-                android:layout_gravity="end"
-                android:padding="10dp"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
+                <!-- Result Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/resultCardBg"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvURL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Shortened URL will appear here"
+                            android:textSize="16sp"
+                            android:textColor="@color/primaryColor"
+                            android:paddingBottom="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCopy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Copy URL"
+                            android:textAllCaps="false"
+                            android:textSize="14sp"
+                            app:cornerRadius="12dp"
+                            app:iconTint="@color/primaryColor"
+                            app:strokeColor="@color/primaryColor"
+                            app:strokeWidth="2dp"
+                            android:textColor="@color/primaryColor"
+                            android:layout_gravity="end" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
