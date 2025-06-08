@@ -13,16 +13,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
-            switch (item.getItemId()) {
-                case R.id.nav_home:
-                    selectedFragment = new HomeFragment();
-                    break;
-                case R.id.nav_history:
-                    selectedFragment = new HistoryFragment();
-                    break;
-                case R.id.nav_profile:
-                    selectedFragment = new ProfileFragment();
-                    break;
+            int itemId = item.getItemId();
+            if (itemId == R.id.nav_home) {
+                selectedFragment = new HomeFragment();
+            } else if (itemId == R.id.nav_history) {
+                selectedFragment = new HistoryFragment();
+            } else if (itemId == R.id.nav_profile) {
+                selectedFragment = new ProfileFragment();
             }
             if (selectedFragment != null) {
                 getSupportFragmentManager().beginTransaction()
