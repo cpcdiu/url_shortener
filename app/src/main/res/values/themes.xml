@@ -13,7 +13,7 @@
     <style name="Theme.Shortly" parent="Base.Theme.Shortly" />
 
     <!-- Modern Bottom Navigation Active Indicator -->
-    <style name="Widget.Material3.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <style name="Widget.Material3.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView">
         <item name="android:background">@color/gradientEnd</item>
         <item name="android:alpha">0.15</item>
         <item name="android:layout_height">8dp</item>
