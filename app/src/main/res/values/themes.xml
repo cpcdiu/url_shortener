@@ -4,10 +4,23 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSurface">@color/cardBgColor</item>
-        <item name="colorBackground">@color/gradientStart</item>
         <item name="android:statusBarColor">@color/gradientStart</item>
         <item name="android:navigationBarColor">@color/gradientEnd</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 
     <style name="Theme.Shortly" parent="Base.Theme.Shortly" />
+
+    <!-- Modern Bottom Navigation Active Indicator -->
+    <style name="Widget.Material3.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/gradientEnd</item>
+        <item name="android:alpha">0.15</item>
+        <item name="android:layout_height">8dp</item>
+        <item name="android:layout_marginTop">-8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.None</item>
+    </style>
 </resources>
