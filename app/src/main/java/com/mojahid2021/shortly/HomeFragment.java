@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ import retrofit2.Callback;
 
 public class HomeFragment extends Fragment {
     private TextInputEditText urlInputText;
-    private LinearLayout btnSubmit;
+    private MaterialButton btnSubmit;
     private TextView tvURL;
     private Button btnCopy;
 
