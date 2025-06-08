@@ -110,7 +110,7 @@
                             app:iconTint="@color/primaryColor"
                             app:strokeColor="@color/primaryColor"
                             app:strokeWidth="2dp"
-                            android:textColor="@color/primaryColor"
+                            android:textColor="@color/white"
                             android:layout_gravity="end" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

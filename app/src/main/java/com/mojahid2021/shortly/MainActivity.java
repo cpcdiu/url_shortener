@@ -1,8 +1,8 @@
 package com.mojahid2021.shortly;
-
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class MainActivity extends AppCompatActivity {
     @Override
