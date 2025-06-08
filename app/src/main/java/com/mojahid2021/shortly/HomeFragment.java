@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +25,7 @@ public class HomeFragment extends Fragment {
     private MaterialButton btnSubmit;
     private TextView tvURL;
     private Button btnCopy;
+    private ProgressBar progressBar;
 
     @Nullable
     @Override
@@ -33,6 +35,7 @@ public class HomeFragment extends Fragment {
         btnSubmit = view.findViewById(R.id.btnSubmit);
         tvURL = view.findViewById(R.id.tvURL);
         btnCopy = view.findViewById(R.id.btnCopy);
+        progressBar = view.findViewById(R.id.progressBar);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +44,7 @@ public class HomeFragment extends Fragment {
                 if (url.isEmpty()) {
                     Toast.makeText(getContext(), "Please enter url...", Toast.LENGTH_SHORT).show();
                 } else {
+                    progressBar.setVisibility(View.VISIBLE);
                     getShortUrl(url);
                 }
             }
@@ -69,6 +73,7 @@ public class HomeFragment extends Fragment {
         call.enqueue(new Callback<ShortenResponse>() {
             @Override
             public void onResponse(Call<ShortenResponse> call, Response<ShortenResponse> response) {
+                progressBar.setVisibility(View.GONE);
                 if (response.isSuccessful()) {
                     ShortenResponse shortenResponse = response.body();
                     if (shortenResponse != null) {
@@ -85,6 +90,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ShortenResponse> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
                 Toast.makeText(getContext(), "Network Error: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
