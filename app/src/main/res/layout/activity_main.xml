@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
+    android:background="@drawable/gradient_background"
     tools:context=".MainActivity">
 
     <!-- Fragment Container for swapping fragments -->
@@ -22,8 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/cardBgColor"
-        app:itemIconTint="@color/primaryColor"
-        app:itemTextColor="@color/primaryColor"
+        android:background="@drawable/bottom_nav_background"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:menu="@menu/bottom_nav_menu" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

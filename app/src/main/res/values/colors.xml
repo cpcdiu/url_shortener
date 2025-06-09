@@ -8,4 +8,33 @@
     <color name="resultCardBg">#E3F2FD</color>
     <color name="gradientStart">#6C63FF</color>
     <color name="gradientEnd">#48C6EF</color>
+        <color name="cyan_500">#00BCD4</color>       <!-- Primary Cyan -->
+        <color name="cyan_700">#0097A7</color>       <!-- Darker Cyan -->
+        <color name="gray_200">#EEEEEE</color>
+        <color name="gray_800">#424242</color>
+    <color name="navy_blue">#2C2F4A</color>
+    <color name="light_purple">#E6E3FF</color>
+    <color name="coral_red">#FF6B5A</color>
+    <color name="teal_blue">#4FC3D7</color>
+    <color name="purple_dark">#6366A8</color>
+    <color name="purple_medium">#8B5CF6</color>
+
+    <!-- Text Colors -->
+    <color name="gray_text">#9CA3AF</color>
+    <color name="dark_text">#1F2937</color>
+
+    <!-- Background Colors -->
+    <color name="light_background">#F8FAFC</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_selected">#2C2F4A</color>
+    <color name="bottom_nav_unselected">#9CA3AF</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#E0E7FF</color>
+    <color name="gradient_end">#C7D2FE</color>
+
+    <color name="primaryDark">#1B1F3A</color>
+
 </resources>
