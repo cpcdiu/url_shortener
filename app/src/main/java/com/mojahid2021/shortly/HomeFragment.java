@@ -2,11 +2,13 @@ package com.mojahid2021.shortly;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,10 +27,9 @@ import retrofit2.Response;
 
 
 public class HomeFragment extends Fragment {
-    private TextInputEditText urlInputText;
-    private MaterialButton btnSubmit;
+    private EditText urlInputText;
+    private MaterialButton btnSubmit, btnCopy, btnShare;
     private TextView tvURL;
-    private Button btnCopy;
     private ProgressBar progressBar;
 
     @Nullable
@@ -40,6 +41,7 @@ public class HomeFragment extends Fragment {
         tvURL = view.findViewById(R.id.tvURL);
         btnCopy = view.findViewById(R.id.btnCopy);
         progressBar = view.findViewById(R.id.progressBar);
+        btnShare = view.findViewById(R.id.btnShare);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,19 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String urlToShare = tvURL.getText().toString();
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.putExtra(Intent.EXTRA_SUBJECT, "Check this out");
+                share.putExtra(Intent.EXTRA_TEXT, urlToShare);
+                startActivity(Intent.createChooser(share, "Share via"));
+            }
+        });
+
         return view;
     }
 
