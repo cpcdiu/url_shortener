@@ -30,7 +30,6 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
             android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/cardBgColor"
             app:cardCornerRadius="24dp"
@@ -41,32 +40,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/inputBgColor"
                 android:padding="20dp">
 
                 <!-- Improved URL Input with icon -->
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="1dp"
                     android:layout_marginBottom="20dp"
-                    android:hint="Paste your URL here"
-                    app:boxBackgroundColor="@color/inputBgColor"
-                    app:boxBackgroundMode="filled"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusBottomStart="12dp"
-                    app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp"
-                    app:startIconDrawable="@drawable/ic_shorten"
-                    app:startIconTint="@color/primaryColor">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etURL"
+                    android:background="@drawable/text_input_bg"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:imeOptions="actionDone"
-                        android:inputType="textUri"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="Paste your URL here"
+                        app:startIconDrawable="@drawable/ic_shorten"
+                        app:startIconTint="@color/primaryColor">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etURL"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="actionDone"
+                            android:inputType="textUri"
+                            android:background="@color/white"
+                            android:textColor="@color/black"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
                 <!-- Enhanced Shorten Button -->
                 <com.google.android.material.button.MaterialButton
