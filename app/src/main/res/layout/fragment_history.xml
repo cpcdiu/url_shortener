@@ -26,7 +26,7 @@
             android:src="@drawable/ic_arrow_back"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="0dp"
-            android:tint="@color/navy_blue" />
+            app:tint="@color/navy_blue" />
 
         <TextView
             android:layout_width="0dp"
