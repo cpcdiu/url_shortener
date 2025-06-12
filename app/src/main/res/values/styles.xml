@@ -8,4 +8,12 @@
         <item name="android:textColorPrimary">@color/black</item>
         <item name="colorAccent">@color/coral_red</item>
     </style>
+
+    <style name="BottomRoundedCard" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeBottomRight">20dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+    </style>
 </resources>

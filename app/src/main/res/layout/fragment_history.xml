@@ -8,34 +8,23 @@
     android:background="@drawable/new_bg">
 
     <!-- Header -->
-    <LinearLayout
+    <TextView
+        android:id="@+id/tvHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:textSize="28sp"
+        android:textStyle="bold"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
-        android:paddingTop="32dp"
+        android:paddingTop="20dp"
         android:paddingBottom="16dp"
-        android:gravity="center_vertical">
-
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="History"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginTop="0dp"
-            android:textColor="@color/navy_blue"
-            android:gravity="center"/>
-    </LinearLayout>
+        android:textColor="@color/black" />
 
     <!-- Tabs -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bottom_nav_glass"
@@ -79,8 +68,10 @@
             android:inputType="text"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:background="@drawable/bg" />
+            android:background="@drawable/search_bg_glass" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- (No Copy All Button here) -->
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
@@ -93,4 +84,5 @@
         android:clipToPadding="false"
         android:paddingHorizontal="8dp"
         android:scrollbars="vertical" />
+
 </LinearLayout>
