@@ -1,5 +1,7 @@
 package com.mojahid2021.shortly;
 
+import static android.view.View.VISIBLE;
+
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
@@ -18,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,8 +32,9 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     private EditText urlInputText;
     private MaterialButton btnSubmit, btnCopy, btnShare;
-    private TextView tvURL;
+    private TextView tvURL, tvOriginalURL;
     private ProgressBar progressBar;
+    private MaterialCardView resultCard;
 
     @Nullable
     @Override
@@ -42,6 +46,8 @@ public class HomeFragment extends Fragment {
         btnCopy = view.findViewById(R.id.btnCopy);
         progressBar = view.findViewById(R.id.progressBar);
         btnShare = view.findViewById(R.id.btnShare);
+        resultCard = view.findViewById(R.id.resultCard);
+        tvOriginalURL = view.findViewById(R.id.tvOriginalURL);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +56,7 @@ public class HomeFragment extends Fragment {
                 if (url.isEmpty()) {
                     Toast.makeText(getContext(), "Please enter url...", Toast.LENGTH_SHORT).show();
                 } else {
-                    progressBar.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(VISIBLE);
                     getShortUrl(url);
                 }
             }
@@ -94,12 +100,14 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<ShortenResponse> call, Response<ShortenResponse> response) {
                 progressBar.setVisibility(View.GONE);
                 if (response.isSuccessful()) {
+                    resultCard.setVisibility(VISIBLE);
                     ShortenResponse shortenResponse = response.body();
                     if (shortenResponse != null) {
                         String shortUrl = shortenResponse.getShortUrl();
                         String originalUrl = shortenResponse.getOriginalUrl();
                         Toast.makeText(getContext(), "Shortened URL: " + shortUrl, Toast.LENGTH_LONG).show();
                         Toast.makeText(getContext(), "Original URL: " + originalUrl, Toast.LENGTH_LONG).show();
+                        tvOriginalURL.setText(originalUrl);
                         tvURL.setText(shortUrl);
                     }
                 } else {
