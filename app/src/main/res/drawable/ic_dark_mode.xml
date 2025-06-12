@@ -1,0 +1,8 @@
+<!-- res/drawable/ic_dark_mode.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M20.742,13.045a8.088,8.088 0 0 1 -8.787,-8.787 7.5,7.5 0 1 0 8.787,8.787z"/>
+</vector>

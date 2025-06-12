@@ -3,197 +3,240 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/new_bg"
+    android:fillViewport="true"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:padding="24dp">
 
-        <!-- App Title with subtle improvements -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:layout_marginBottom="32dp"
-            android:fontFamily="@font/rubik_moonrocks_regular"
-            android:letterSpacing="0.03"
-            android:text="Shortly"
-            android:textColor="@color/primaryColor"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <!-- Enhanced Card for URL Shortener -->
+        <!-- Purple Card with App Title -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            app:cardBackgroundColor="@color/cardBgColor"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/navy_blue">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="40dp">
+
+                <!-- App Title -->
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shortly"
+                    android:textColor="@color/white"
+                    android:textSize="42sp"
+                    android:fontFamily="@font/rubik_moonrocks_regular"
+                    android:textStyle="bold"
+                    android:importantForAccessibility="yes" />
+
+                <!-- URL Input -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/card_background">
+
+                    <EditText
+                        android:id="@+id/etURL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Paste your long URL here..."
+                        android:inputType="textUri"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="16sp"
+                        android:background="@android:color/transparent"
+                        android:padding="20dp"
+                        android:minHeight="56dp"
+                        android:imeOptions="actionDone"
+                        android:importantForAccessibility="yes"
+                        android:accessibilityLiveRegion="polite" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Shorten Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Shorten URL"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:icon="@drawable/ic_shorten"
+                    app:iconTint="@color/white"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:backgroundTint="@color/coral_red"
+                    app:cornerRadius="25dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Loading Indicator -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/primaryPurple"
+            app:trackColor="@color/progressTrack" />
+
+        <!-- Result Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/resultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
             app:cardCornerRadius="24dp"
-            app:strokeColor="#11000000"
-            app:strokeWidth="1dp">
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/inputBgColor"
                 android:padding="20dp">
 
-                <EditText
-                    android:id="@+id/etURL"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Enter your URL here"
-                    android:background="@drawable/text_input_bg"
-                    />
-                <!-- Improved URL Input with icon -->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:paddingBottom="5dp"-->
-<!--                    android:paddingLeft="1dp"-->
-<!--                    android:paddingRight="1dp"-->
-<!--                    android:layout_marginLeft="5dp"-->
-<!--                    android:layout_marginRight="5dp"-->
-<!--                    android:layout_marginBottom="20dp"-->
-<!--                    android:background="@drawable/text_input_bg"-->
-<!--                    android:layout_height="wrap_content">-->
-<!--                    <com.google.android.material.textfield.TextInputLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:hint="Paste your URL here"-->
-<!--                        app:startIconDrawable="@drawable/ic_shorten"-->
-<!--                        app:startIconTint="@color/primaryColor">-->
-
-<!--                        <com.google.android.material.textfield.TextInputEditText-->
-<!--                            android:id="@+id/etURL"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:imeOptions="actionDone"-->
-<!--                            android:inputType="textUri"-->
-<!--                            android:background="@color/white"-->
-<!--                            android:textColor="@color/black"-->
-<!--                            />-->
-<!--                    </com.google.android.material.textfield.TextInputLayout>-->
-<!--                </LinearLayout>-->
-
-                <!-- Enhanced Shorten Button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSubmit"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginBottom="16dp"
-                    android:stateListAnimator="@null"
-                    android:text="Shorten URL"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="17sp"
-                    app:backgroundTint="@color/primaryColor"
-                    app:cornerRadius="14dp"
-                    app:icon="@drawable/ic_shorten"
-                    app:iconGravity="textStart"
-                    app:iconPadding="10dp"
-                    app:iconTint="@color/white" />
-
-                <!-- Enhanced Result Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/resultCard"
+                <!-- Original URL -->
+                <TextView
+                    android:id="@+id/tvOriginalURL"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/resultCardBg"
-                    app:cardCornerRadius="14dp"
-                    app:cardElevation="2dp">
+                    android:layout_marginBottom="4dp"
+                    android:text="https://www.example.com/"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:importantForAccessibility="yes" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                <!-- Long URL Title -->
+                <TextView
+                    android:id="@+id/tvLongURLTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="very-long-url"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:importantForAccessibility="yes" />
+
+                <!-- Short URL + Copy Icon -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tvURL"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:text="short.ly/xyz123"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:importantForAccessibility="yes" />
 
-                        <TextView
-                            android:id="@+id/tvURL"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="sans-serif-medium"
-                            android:lineSpacingExtra="4dp"
-                            android:text="Shortened URL will appear here"
-                            android:textColor="@color/primaryColor"
-                            android:textSize="16sp" />
+                    <ImageView
+                        android:id="@+id/ivCopyIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/ic_copy"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:contentDescription="Copy Short URL" />
+                </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="end"
-                            android:orientation="horizontal">
+                <!-- Stats -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
-                            <!-- Share Button -->
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnShare"
-                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:layout_marginEnd="12dp"
-                                android:text="Share"
-                                android:textAllCaps="false"
-                                android:textColor="@color/primaryColor"
-                                android:textSize="14sp"
-                                app:cornerRadius="10dp"
-                                app:icon="@drawable/ic_share"
-                                app:iconGravity="textStart"
-                                app:iconPadding="6dp"
-                                app:iconTint="@color/primaryColor"
-                                app:strokeColor="@color/primaryColor"
-                                app:strokeWidth="1.5dp" />
+                    <TextView
+                        android:id="@+id/usedtime"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Used 12 times"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:importantForAccessibility="yes" />
 
-                            <!-- Copy Button -->
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnCopy"
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="Copy"
-                                android:textAllCaps="false"
-                                android:textColor="@color/white"
-                                android:textSize="14sp"
-                                app:backgroundTint="@color/primaryColor"
-                                app:cornerRadius="10dp"
-                                app:icon="@drawable/ic_copy"
-                                app:iconGravity="textStart"
-                                app:iconPadding="6dp"
-                                app:iconTint="@color/white" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/tvCopiedStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copied"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:importantForAccessibility="yes" />
+                </LinearLayout>
 
-                <!-- Modern Circular Progress Indicator -->
-                <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/progressBar"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center"
-                    android:layout_marginVertical="16dp"
-                    android:indeterminate="true"
-                    android:visibility="gone"
-                    app:indicatorColor="@color/primaryColor"
-                    app:trackColor="#33FFFFFF" />
+                <!-- Optional Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="end"
+                    android:visibility="gone">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCopy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Copy"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        app:cornerRadius="12dp"
+                        app:backgroundTint="@color/black"
+                        android:importantForAccessibility="yes" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Share"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:cornerRadius="12dp"
+                        app:strokeColor="@color/black"
+                        app:strokeWidth="1dp"
+                        android:layout_marginStart="12dp"
+                        android:importantForAccessibility="yes" />
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-
-        <!-- Optional Footer Text -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Simple, fast URL shortening"
-            android:textColor="#888888"
-            android:textSize="13sp" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
