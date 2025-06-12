@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new_bg"
+    android:background="@drawable/bg_wave_abstract"
     android:fillViewport="true"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
@@ -12,38 +12,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="24dp">
+        android:gravity="center_horizontal">
 
-        <!-- Purple Card with App Title -->
+        <!-- Card Background with bottom-only rounded corners -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="-220dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/gradientStart"
+            app:shapeAppearanceOverlay="@style/BottomRoundedCard">
+
+            <!-- This empty View helps ensure the card maintains its shape -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Main Title (Shortly) positioned over the card -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shortly"
+            android:textColor="@color/white"
+            android:textSize="42sp"
+            android:fontFamily="@font/rubik_moonrocks_regular"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:importantForAccessibility="yes"/>
+        <!-- main Card  -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginBottom="32dp"
             app:cardCornerRadius="32dp"
             app:cardElevation="0dp"
             app:cardBackgroundColor="@color/navy_blue">
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:padding="40dp">
-
-                <!-- App Title -->
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Shortly"
-                    android:textColor="@color/white"
-                    android:textSize="42sp"
-                    android:fontFamily="@font/rubik_moonrocks_regular"
-                    android:textStyle="bold"
-                    android:importantForAccessibility="yes" />
 
                 <!-- URL Input -->
                 <com.google.android.material.card.MaterialCardView
@@ -113,6 +129,8 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             app:cardCornerRadius="24dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             app:cardBackgroundColor="@color/white"
             android:layout_marginTop="16dp"
             android:padding="16dp">
@@ -134,13 +152,13 @@
                     android:textSize="14sp"
                     android:importantForAccessibility="yes" />
 
-                <!-- Long URL Title -->
+                <!-- Short  URL Title -->
                 <TextView
-                    android:id="@+id/tvLongURLTitle"
+                    android:id="@+id/tvshortURLTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="very-long-url"
+                    android:text="Your Short url "
                     android:textColor="@color/gray"
                     android:textSize="14sp"
                     android:importantForAccessibility="yes" />
@@ -164,15 +182,19 @@
                         android:textStyle="bold"
                         android:importantForAccessibility="yes" />
 
-                    <ImageView
-                        android:id="@+id/ivCopyIcon"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_marginStart="12dp"
-                        android:src="@drawable/ic_copy"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:padding="4dp"
-                        android:contentDescription="Copy Short URL" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCopy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:textSize="14sp"
+                    app:icon="@drawable/ic_copy"
+                    app:iconTint="@color/black"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/transparent"
+                    android:importantForAccessibility="yes" />
+
                 </LinearLayout>
 
                 <!-- Stats -->
@@ -181,16 +203,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
-
-                    <TextView
-                        android:id="@+id/usedtime"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:text="Used 12 times"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:importantForAccessibility="yes" />
 
                     <TextView
                         android:id="@+id/tvCopiedStatus"
@@ -210,17 +222,6 @@
                     android:layout_marginTop="16dp"
                     android:gravity="end"
                     android:visibility="gone">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnCopy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:text="Copy"
-                        android:textSize="14sp"
-                        android:textColor="@color/black"
-                        app:cornerRadius="12dp"
-                        app:backgroundTint="@color/black"
-                        android:importantForAccessibility="yes" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnShare"
