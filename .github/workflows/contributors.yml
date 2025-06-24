@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '0 0 * * 1'  # every Monday
+    - cron: '0 0 * * 1'  # Every Monday
 
 jobs:
   update-contributors:
@@ -19,3 +19,4 @@ jobs:
           image_size: 100
           columns_per_row: 6
           readme_path: README.md
+          token: ${{ secrets.GITHUB_TOKEN }}
