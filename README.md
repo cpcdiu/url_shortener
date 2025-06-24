@@ -37,6 +37,11 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 - The app uses a remote API at `https://s-hort.vercel.app/api/shorten` for URL shortening.
 - For development, SSL certificate validation is disabled (see `ApiClient.java`).
 
+## Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
+
 
 ## License
 
