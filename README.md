@@ -42,12 +42,11 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 
 ## Contributors
 
-| Avatar | Contributor | Name | Commits |
-|---|---|---|---|
-| <img src="https://avatars.githubusercontent.com/u/111579765?v=4" width="50"> | [@mojahid2021](https://github.com/mojahid2021) | Md Mojahid | 56 |
-| <img src="https://avatars.githubusercontent.com/u/198484936?v=4" width="50"> | [@khaliduzzamantanoy](https://github.com/khaliduzzamantanoy) | MD. KHALIDUZZAMAN TANOY | 9 |
-| <img src="https://avatars.githubusercontent.com/in/23186?v=4" width="50"> | [@allcontributors[bot]](https://github.com/allcontributors[bot]) | None | 4 |
-| <img src="https://avatars.githubusercontent.com/u/102396383?v=4" width="50"> | [@kazimdkhalednur](https://github.com/kazimdkhalednur) | Kazi Khaled Nur | 1 |
+| Avatar | Contributor | Name | Commits | Percentage |
+|---|---|---|---|---|
+| <img src="https://avatars.githubusercontent.com/u/111579765?v=4" width="50"> | [@mojahid2021](https://github.com/mojahid2021) | Md Mojahid | 50 | 83.3% |
+| <img src="https://avatars.githubusercontent.com/u/198484936?v=4" width="50"> | [@khaliduzzamantanoy](https://github.com/khaliduzzamantanoy) | MD. KHALIDUZZAMAN TANOY | 9 | 15.0% |
+| <img src="https://avatars.githubusercontent.com/u/102396383?v=4" width="50"> | [@kazimdkhalednur](https://github.com/kazimdkhalednur) | Kazi Khaled Nur | 1 | 1.7% |
 
 ## License
 
