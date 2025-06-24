@@ -43,6 +43,11 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 ## Contributors
 
 
+| Contributor | Commits | Percentage |
+|---|---|---|
+| [@mojahid2021](https://github.com/mojahid2021) | 50 | 83.3% |
+| [@khaliduzzamantanoy](https://github.com/khaliduzzamantanoy) | 9 | 15.0% |
+| [@kazimdkhalednur](https://github.com/kazimdkhalednur) | 1 | 1.7% |
 
 ## License
 
