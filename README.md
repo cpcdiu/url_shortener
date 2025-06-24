@@ -1,4 +1,7 @@
 # Shortly - Android URL Shortener App
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Shortly is a modern, visually appealing Android app that allows users to quickly shorten URLs using a remote API. The app features a beautiful Material3-based UI, smooth navigation, and a simple user experience.
 
@@ -40,6 +43,21 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 ## Contributors
 
 <!-- readme: contributors -start -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/khaliduzzamantanoy"><img src="https://avatars.githubusercontent.com/u/198484936?v=4?s=100" width="100px;" alt="MD. KHALIDUZZAMAN TANOY"/><br /><sub><b>MD. KHALIDUZZAMAN TANOY</b></sub></a><br /><a href="https://github.com/mojahid2021/Shortly-apk/commits?author=khaliduzzamantanoy" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- readme: contributors -end -->
 
 
