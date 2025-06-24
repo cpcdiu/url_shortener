@@ -42,24 +42,6 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 
 ## Contributors
 
-<!-- readme: contributors -start -->
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr> 
-       <td align="center" valign="top" width="14.28%"><a href="https://mojahid-dev.vercel.app/"><img src="https://avatars.githubusercontent.com/u/111579765?v=4?s=100" width="100px;" alt="Md Mojahid"/><br /><sub><b>Md Mojahid</b></sub></a><br /><a href="https://github.com/mojahid2021/Shortly-apk/commits?author=mojahid2021" title="Code">💻</a></td>
-    </tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/khaliduzzamantanoy"><img src="https://avatars.githubusercontent.com/u/198484936?v=4?s=100" width="100px;" alt="MD. KHALIDUZZAMAN TANOY"/><br /><sub><b>MD. KHALIDUZZAMAN TANOY</b></sub></a><br /><a href="https://github.com/mojahid2021/Shortly-apk/commits?author=khaliduzzamantanoy" title="Code">💻</a></td>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- readme: contributors -end -->
 
 
 ## License
