@@ -42,14 +42,12 @@ Shortly is a modern, visually appealing Android app that allows users to quickly
 
 ## Contributors
 
-| Avatar | Contributor | Name | Location | Bio | Public Repos | Followers | Commits | Percentage |
-|---|---|---|---|---|---|---|---|---|
-| <img src="https://avatars.githubusercontent.com/u/111579765?v=4" width="50"> | [@mojahid2021](https://github.com/mojahid2021) | Md Mojahid | Bangladesh | None | 27 | 1 | 57 | 80.3% |
-| <img src="https://avatars.githubusercontent.com/u/198484936?v=4" width="50"> | [@khaliduzzamantanoy](https://github.com/khaliduzzamantanoy) | MD. KHALIDUZZAMAN TANOY | None | Software Developer passionate about creating real-world solutions | Python, JavaScript, HTML/CSS, Docker | Always building something new . | 7 | 1 | 9 | 12.7% |
-| <img src="https://avatars.githubusercontent.com/in/23186?v=4" width="50"> | [@allcontributors[bot]](https://github.com/allcontributors[bot]) | None | None | None | 0 | 0 | 4 | 5.6% |
-| <img src="https://avatars.githubusercontent.com/u/102396383?v=4" width="50"> | [@kazimdkhalednur](https://github.com/kazimdkhalednur) | Kazi Khaled Nur | Bangladesh | None | 19 | 36 | 1 | 1.4% |
-
-
+| Avatar | Contributor | Name | Commits |
+|---|---|---|---|
+| <img src="https://avatars.githubusercontent.com/u/111579765?v=4" width="50"> | [@mojahid2021](https://github.com/mojahid2021) | Md Mojahid | 56 |
+| <img src="https://avatars.githubusercontent.com/u/198484936?v=4" width="50"> | [@khaliduzzamantanoy](https://github.com/khaliduzzamantanoy) | MD. KHALIDUZZAMAN TANOY | 9 |
+| <img src="https://avatars.githubusercontent.com/in/23186?v=4" width="50"> | [@allcontributors[bot]](https://github.com/allcontributors[bot]) | None | 4 |
+| <img src="https://avatars.githubusercontent.com/u/102396383?v=4" width="50"> | [@kazimdkhalednur](https://github.com/kazimdkhalednur) | Kazi Khaled Nur | 1 |
 
 ## License
 
